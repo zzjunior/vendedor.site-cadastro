@@ -31,7 +31,7 @@
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
         <div class="text-center">
-                            <h2 class="mt-5">Cadastro Panfleto Digital <p class="h6 text-danger">Site do Vendedor</p></h2>
+                        <h2 class="mt-5">Cadastro Panfleto Digital <p class="h6 text-danger">Site do Vendedor</p></h2>
                         </div>
                         <div class="col">
                     <div class="text-center" style="margin-top: 2rem;">
@@ -88,17 +88,28 @@
                                     placeholder="Ex:..Potiguar Honda" required>
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="name">Seu Estado:</label>
+                                    <input type="text" name="cidade" value="" class="form-control form-control-user" id="slug"
+                                        placeholder="Ex:..Rio grande do Sul" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-2">
                                     <label for="name">Sua Cidade:</label>
                                     <input type="text" name="cidade" value="" class="form-control form-control-user" id="slug"
-                                        placeholder="Ex:..Sua Cidade" required>
+                                        placeholder="Ex:..Porto Alegre" required>
                                 </div>
                             </div>
                             
                             <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label for="WhatsApp">Seu WhatsApp:</label>
-                                    <input type="number" name="whatsapp" class="form-control form-control-user" id="exampleFirstName"
-                                        placeholder="" value="" required >
+                            <div class="col-3 col-sm-1 mb-3">
+                                <label for="celular">DDD</label>
+                                <input required type="text" name="ddd" class="form-control form-control-user phone_ddd" id="celular" placeholder="00" maxlength="2" style="font-family: Roboto, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Noto Color Emoji&quot;, EmojiNotoColor, &quot;Noto Emoji&quot;, EmojiNoto, &quot;Segoe UI&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Twitter Color Emoji&quot;, EmojiTwemColor, &quot;Twemoji Mozilla&quot;, EmojiTwem, &quot;EmojiOne Mozilla&quot;, &quot;Android Emoji&quot;, EmojiSymbols, Symbola, EmojiSymb !important;" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);">
+                            </div>
+
+                                <div class="col-9 col-sm-5 mb-3">
+                                    <label for="celular">Celular</label>
+                                    <input required type="text" name="celular" class="form-control form-control-user phone" id="celular" placeholder="00000-0000" maxlength="10">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="instagram">Seu instagram:</label>
@@ -108,16 +119,16 @@
                             </div>
 
                             <div class="form-group row">
-                                <div class="col mb-3 mb-sm-0">
-                                    <label for="planos_escolhidos">Planos desejados:</label>
+                                <div class="col-xl-12 col-sm-3 mb-3 mb-sm-0">
+                                    <label for="planos_escolhidos">PLANOS QUE EU VENDO</label>
                                     <select multiple placeholder="Selecione os planos" name="planos[]" class="form-control select2-multiple" >
                                                                                     <option value="7">Advance</option>
                                                                                     <option value="8">#Vou de Honda</option>
                                                                                     <option value="9">#Vou de Honda+</option>
                                                                                     <!--<option value="12" selected>Plano Especial</option>-->
-                                                                                    <option value="13">Exibir Pop 110i ES</option>
-                                                                                    <option value="14">Exibir Pop 110i + 10</option>
-                                                                                    <option value="15">Exibir CRF</option>
+                                                                                    <option value="13">Plano Pop 110i ES</option>
+                                                                                    <option value="14">Plano Pop 110i + 10</option>
+                                                                                    <option value="15">Plano CRF</option>
                                                                                     <!--<option value="16" selected>Plano CRF + (Placa)</option>-->
                                                                             </select>
                                 </div>
@@ -132,9 +143,9 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label for="apresentacao">Fonte de pagamento</label>
+                                    <label for="apresentacao">QUEM VAI PAGAR SEU SITE?</label>
                                     <select name="fonte_pagamento" id="fonte_pagamento" class="form-control">
-                                        <option value="1" >Eu mesmo</option>
+                                        <option value="1" >Vendedor</option>
                                         <option value="2" >Minha Concessionaria</option>
                                     </select>
                                 </div>
