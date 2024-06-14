@@ -106,11 +106,10 @@
                                 <label for="celular">DDD</label>
                                 <input required type="text" name="ddd" class="form-control form-control-user phone_ddd" id="celular" placeholder="00" maxlength="2" style="font-family: Roboto, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Noto Color Emoji&quot;, EmojiNotoColor, &quot;Noto Emoji&quot;, EmojiNoto, &quot;Segoe UI&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Twitter Color Emoji&quot;, EmojiTwemColor, &quot;Twemoji Mozilla&quot;, EmojiTwem, &quot;EmojiOne Mozilla&quot;, &quot;Android Emoji&quot;, EmojiSymbols, Symbola, EmojiSymb !important;" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);">
                             </div>
-
-                                <div class="col-9 col-sm-5 mb-3">
-                                    <label for="celular">Celular</label>
-                                    <input required type="text" name="celular" class="form-control form-control-user phone" id="celular" placeholder="00000-0000" maxlength="10">
-                                </div>
+                            <div class="col-9 col-sm-5 mb-3">
+                                <label for="celular">Celular</label>
+                                <input required type="text" name="celular" class="form-control form-control-user phone" id="celular" placeholder="00000-0000" maxlength="10">
+                            </div>
                                 <div class="col-sm-6">
                                     <label for="instagram">Seu instagram:</label>
                                     <input type="text" name="instagram" value="" class="form-control form-control-user" id="exampleLastName"
