@@ -31,7 +31,7 @@
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
         <div class="text-center">
-                            <h1 class="mt-5">Cadastro Panfleto Digital <p class="h6 text-danger">Site do Vendedor</p></h1>
+                            <h2 class="mt-5">Cadastro Panfleto Digital <p class="h6 text-danger">Site do Vendedor</p></h2>
                         </div>
                         <div class="col">
                     <div class="text-center" style="margin-top: 2rem;">
@@ -139,9 +139,11 @@
                                     </select>
                                 </div>
                             </div>
-
                             <input type="submit" class="btn btn-danger btn-user btn-block" value='Criar Meu Site'>
                         </form>
+                        <div id="duvidas" class="text-center mt-3">
+                                Dúvidas? <a href="https://wa.me/5511950266656" target="_blank" rel="noopener noreferrer">Clique aqui para suporte</a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -179,6 +181,12 @@
                     </div>
                 </div>
             </footer>
+                <!-- Botão do WhatsApp -->
+    <div style="position: fixed; bottom: 70px; right: 3px;">
+        <a href="https://wa.me/5511950266656" target="_blank">
+            <img title="Dúvidas?" src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-png-0.png" alt="WhatsApp" width="70" height="70">
+        </a>
+    </div>
             <!-- End of Footer -->
 
         </div>
