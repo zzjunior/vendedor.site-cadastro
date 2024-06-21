@@ -7,6 +7,7 @@
     <meta name="description" content="Panfleto Digital - Cadastre-se">
     <meta name="author" content="Alcance Vendas">
     <title>Panfleto Digital</title>
+    <link rel="stylesheet" href="css/virtual-select.min.css">
     <!-- Custom fonts for this template -->
     <link href="https://vendedor.site/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -21,6 +22,55 @@
 </head>
 
 <body id="page-top">
+    <header class="shadow-lg" style="background-color:#0F172D">
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand topbar mb-5 static-top">
+            <div class="container navbar-light bg-white shadow-lg p-2 mt-3" style="border-radius: .2rem;">
+                <a class="navbar-brand" href="https://alcancevendas.com.br/panfletodigital/">
+                    <img class="img-fluid" src="https://alcancevendas.com.br/panfletodigital/wp-content/uploads/2024/06/Sem-titulo-2-1536x382.webp" width="150px" alt="Logo-PD">
+                </a>
+                <button id="button-envio" class="shadow img-fluid" type="button" style="background-color:rgb(245,87,90);border-radius:2rem; border: none;font-size:small; padding: .5rem">
+            <span style="color:white;">
+                <strong>CONTRATE AGORA!</strong>
+            </span>
+        </button>
+            </div>
+        </nav>
+        <section class="mt-5 container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg text-center">
+                        <h1 class="mt-5 text-white">Venda mais e melhor com o Panfleto Digital Honda!</h1>
+                        <p class="interactive-text text-white h6">Conquiste e impressione seus clientes, centralizando todas as informações dos planos e valores das parcelas,  além de vídeos  essenciais para fechar vendas de consórcio e financiamento como nunca antes.</p>
+                    </div>
+                    <div class="col-lg text-center">
+                        <img class="img-fluid mb-3" src="https://alcancevendas.com.br/panfletodigital/wp-content/uploads/2023/11/mockup2.png" width="250px" alt="Panfleto Digital Honda">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-xl w-100 mb-5" style="margin-top: 2rem; display: inline-block;position: relative;left: 50%;transform: translateX(-50%);">
+                <iframe class="panfleto-video w-100 shadow-lg" style="border-radius: .5rem;" frameborder="" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="VIDEO DE APRESENTAÇÃO - SITE DO VENDEDOR" width="620" height="340" src="https://www.youtube.com/embed/Vf9ouw7Hk6E?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falcancevendas.com.br&amp;widgetid=1" id="widget2">
+                </iframe>
+                </section>
+        <div class="container text-center">
+        <button id="button-envio-2" class="mb-5 shadow img-fluid" type="button" style="background-color:rgb(245,87,90);border-radius:2rem; border: none; width:25rem; height:3rem;">
+            <span class="img-fluid" style="color:white;">
+                <strong>CONHEÇA O PODER DO PANFLETO DIGTIAL</strong>
+            </span>
+        </button>
+        <style>
+            #button-envio-2:hover { background-color:rgb(50,70,90); transform: translateY(-10px); transition: .40s;}
+            #button-envio:hover { background-color:rgb(50,70,90); transform: translateY(-10px); transition: .40s;}
+        </style>
+        <script>
+            document.getElementById('button-envio').addEventListener('click', function() {
+                document.getElementById('envio_cadastro').scrollIntoView({behavior: 'smooth'});});
+                document.getElementById('button-envio-2').addEventListener('click', function() {
+                    document.getElementById('envio_cadastro').scrollIntoView({behavior: 'smooth'});});
+                </script>
+        </div>
+    </header>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -31,7 +81,7 @@
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
         <div class="text-center">
-                        <h2 class="mt-5">Cadastro Panfleto Digital <p class="h6 text-danger">Site do Vendedor</p></h2>
+                        <h2 id="envio_cadastro" class="mt-5">Envie seu cadastro agora<p class="h6 text-danger">Site do Vendedor Honda</p></h2>
                         </div>
                         <div class="col">
                     <div class="text-center" style="margin-top: 2rem;">
@@ -41,7 +91,8 @@
             <div class="row">
                 <div class="col-lg">
                     <div class="p-5">
-                        <form action="/admin/criar/5" method="POST" class="Vendedor" enctype="multipart/form-data">
+                        <form action="/autostore" method="POST" class="Vendedor" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group row">
                                 <div class="col-sm-6 mb-3">
                                     <label for="foto">Envie sua Foto:</label>
@@ -58,12 +109,12 @@
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="name">Seu Nome completo:</label>
                                     <input type="text" name="nome_completo" class="form-control form-control-user" id="exampleFirstName"
-                                        value="">
+                                        value="" required>
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="name">Seu CPF:</label>
                                     <input type="text" name="CPF" class="form-control form-control-user" id="exampleFirstName"
-                                        value="">
+                                        value="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -78,6 +129,7 @@
                                     <span class="input-group-text rounded-0 mb-sm-5 mb-3" id="basic-addon1">vendedor.site/</span>
                                     <input type="text" name="slug" class="form-control form-control-user" id="slug"
                                         placeholder="Ex:..nicolyhonda" value="" required>
+                                        <p class="nome_invalido text-danger d-none">URL em uso</p>
                                         </div>
                                 </div>
                             </div>
@@ -89,7 +141,7 @@
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="name">Seu Estado:</label>
-                                    <input type="text" name="cidade" value="" class="form-control form-control-user" id="slug"
+                                    <input type="text" name="estado" value="" class="form-control form-control-user" id="slug"
                                         placeholder="Ex:..Rio grande do Sul" required>
                                 </div>
                             </div>
@@ -120,16 +172,16 @@
                             <div class="form-group row">
                                 <div class="col-xl-12 col-sm-3 mb-3 mb-sm-0">
                                     <label for="planos_escolhidos">PLANOS QUE EU VENDO</label>
-                                    <select multiple placeholder="Selecione os planos" name="planos[]" class="form-control select2-multiple" >
-                                                                                    <option value="7">Advance</option>
-                                                                                    <option value="8">#Vou de Honda</option>
-                                                                                    <option value="9">#Vou de Honda+</option>
-                                                                                    <!--<option value="12" selected>Plano Especial</option>-->
-                                                                                    <option value="13">Plano Pop 110i ES</option>
-                                                                                    <option value="14">Plano Pop 110i + 10</option>
-                                                                                    <option value="15">Plano CRF</option>
-                                                                                    <!--<option value="16" selected>Plano CRF + (Placa)</option>-->
-                                                                            </select>
+                                    <select multiple placeholder="Selecione os planos" name="planos[]" multiple="multiple" class="select2-multiple" >
+                                        <option value="7" selected>Advance</option>
+                                        <option value="8" selected>#Vou de Honda</option>
+                                        <option value="9" selected>#Vou de Honda+</option>
+                                        <!--<option value="12" selected>Plano Especial</option>-->
+                                        <option value="13" selected>Plano Pop 110i ES</option>
+                                        <option value="14" selected>Plano Pop 110i + 10</option>
+                                        <option value="15" selected>Plano CRF</option>
+                                        <!--<option value="16" selected>Plano CRF + (Placa)</option>-->
+                                    </select>
                                 </div>
                             </div>
 
@@ -149,6 +201,7 @@
                                     </select>
                                 </div>
                             </div>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="submit" class="btn btn-danger btn-user btn-block" value='Criar Meu Site'>
                         </form>
                         <div id="duvidas" class="text-center mt-3">
@@ -161,13 +214,14 @@
     </div>
 
 </div>
-
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="js/virtual-select.min.js"></script>
 
+
 <script>
-    VirtualSelect.init({
-  ele: '#multipleSelect',
-  multiple: true
+    $(document).ready(function() {
+    $('.select2-multiple').select2();
 });
 </script>
 
@@ -183,7 +237,8 @@
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="text-center mb-3">
-                    <img src="https://alcancevendas.com.br/wp-content/uploads/2021/07/UI-Design-Alcance-PaginaCaptura.png" width="120px" alt="">
+                    <img class="img-fluid" src="https://alcancevendas.com.br/wp-content/uploads/2021/07/UI-Design-Alcance-PaginaCaptura.png" width="120px" alt="Logo-Alcance">
+                    <img class="img-fluid m-2" src="https://alcancevendas.com.br/panfletodigital/wp-content/uploads/2023/11/logo.png" width="60px" alt="Logo-PD">
                 </div>
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -225,11 +280,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        $(document).ready(function() {
-        $('.select2-single').select2();
-        $('.select2-multiple').select2();
-        });
-
         function confirm(url){
         var alert = Swal.fire({
             text: "Deseja realizar essa ação",
@@ -244,5 +294,40 @@
     }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+    <script>
+    $(document).ready(function() {
+        $("#slug").keyup(function(){
+            var input = $(this).val();
+            if(input != ""){
+                $.ajax({
+                    url: '/check-slug-unique',
+                    type: 'POST',
+                    data: { slug: input },
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        if(response === "existe") {
+                            $('.nome_invalido').removeClass('d-none');
+                        } else {
+                            $('.nome_invalido').addClass('d-none');
+                        }
+                    },
+                });
+            }
+        });
+    });
+
+    $(document).ready(function() {
+        $('.Vendedor').on('submit', function(e) {
+            if (!$('.nome_invalido').hasClass('d-none')) {
+                e.preventDefault(); // Prevent form submission
+                alert('URL em uso. Por favor, escolha outro.');
+            }
+        });
+    });
+    </script>
 </body>
 </html>
