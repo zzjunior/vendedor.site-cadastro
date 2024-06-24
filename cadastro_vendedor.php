@@ -19,6 +19,46 @@
     <link href="https://vendedor.site/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!--bootstrapp junior - adicinei aqui pra ficar com o estilo que fiz nos testes
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
+    <style>
+        .custom-checkbox {
+            display: inline-block;
+            margin-right: 10px; /* Espaço entre os checkboxes */
+        }
+        .custom-checkbox input[type="checkbox"] {
+            display: none;
+        }
+        .custom-checkbox label {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .custom-checkbox label::before {
+            content: "\25CB"; /* vazio */
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #6b6b6b;
+        }
+        .custom-checkbox input[type="checkbox"]:checked + label::before {
+            content: "\f00c"; /* ícone de check */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: rgb(128, 0, 0);
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -81,7 +121,7 @@
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
         <div class="text-center">
-                        <h2 id="envio_cadastro" class="mt-5">Envie seu cadastro agora<p class="h6 text-danger">Site do Vendedor Honda</p></h2>
+                        <h2 id="envio_cadastro" class="mt-5">Envie seu cadastro<p class="h6 text-danger">Site do Vendedor Honda</p></h2>
                         </div>
                         <div class="col">
                     <div class="text-center" style="margin-top: 2rem;">
@@ -141,10 +181,39 @@
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="name">Seu Estado:</label>
-                                    <input type="text" name="estado" value="" class="form-control form-control-user" id="slug"
-                                        placeholder="Ex:..Rio grande do Sul" required>
+                                    <select name="estado" id="estado" class="form-control form-control-user select2" style="width: 100%;" required>
+                                        <option value="">Selecione seu estado</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
                                 </div>
                             </div>
+
                             <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-2">
                                     <label for="name">Sua Cidade:</label>
@@ -169,28 +238,57 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                            <!--<div class="form-group row">
                                 <div class="col-xl-12 col-sm-3 mb-3 mb-sm-0">
                                     <label for="planos_escolhidos">PLANOS QUE EU VENDO</label>
-                                    <select multiple placeholder="Selecione os planos" name="planos[]" multiple="multiple" class="select2-multiple" >
+                                    <select id="planos_escolhidos" placeholder="Selecione os planos" name="planos[]" multiple="multiple" class="select2-multiple">
                                         <option value="7" selected>Advance</option>
                                         <option value="8" selected>#Vou de Honda</option>
                                         <option value="9" selected>#Vou de Honda+</option>
-                                        <!--<option value="12" selected>Plano Especial</option>-->
                                         <option value="13" selected>Plano Pop 110i ES</option>
                                         <option value="14" selected>Plano Pop 110i + 10</option>
                                         <option value="15" selected>Plano CRF</option>
-                                        <!--<option value="16" selected>Plano CRF + (Placa)</option>-->
                                     </select>
                                 </div>
+                            </div>-->
+
+                            <div class="form-group row">
+                                <div class="col-xl-12 col-sm-6 mb-3 mb-sm-0">
+                                    <label for="planos_escolhidos">PLANOS QUE EU VENDO</label><br>
+                                    <div class="custom-checkbox h6">
+                                        <input type="checkbox" id="plano_7" name="planos[]" value="7" checked>
+                                        <label for="plano_7">Advance</label>
+                                    </div>
+                                    <div  class="custom-checkbox h6">
+                                        <input type="checkbox" id="plano_8" name="planos[]" value="8" checked>
+                                        <label for="plano_8">#Vou de Honda</label>
+                                    </div>
+                                    <div class="custom-checkbox h6">
+                                        <input type="checkbox" id="plano_9" name="planos[]" value="9" checked>
+                                        <label for="plano_9">#Vou de Honda+</label>
+                                    </div>
+                                    <div class="custom-checkbox h6">
+                                        <input type="checkbox" id="plano_13" name="planos[]" value="13" checked>
+                                        <label for="plano_13">Pop 110i ES</label>
+                                    </div>
+                                    <div class="custom-checkbox h6">
+                                        <input type="checkbox" id="plano_14" name="planos[]" value="14" checked>
+                                        <label for="plano_14">Pop 110i + 10</label>
+                                    </div>
+                                    <div class="custom-checkbox h6">
+                                        <input type="checkbox" id="plano_15" name="planos[]" value="15" checked>
+                                        <label for="plano_15">CRF</label>
+                                    </div>
+                                </div>
                             </div>
+
 
                             <div class="form-group row mb-5">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="apresentacao">Exibir valor da carta de crédito</label>
                                     <select name="mostrar_valor_credito" id="mostrar_valor_credito" class="form-control">
-                                        <option value="1" >Sim</option>
-                                        <option value="0"  selected >Não</option>
+                                        <option value="1"  selected >Sim</option>
+                                        <option value="0" >Não</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -224,6 +322,29 @@
     $('.select2-multiple').select2();
 });
 </script>
+    <!-- Inicializando o novo Select2 -->
+    <script>
+        $(document).ready(function() {
+            $('#planos_escolhidos').select2({
+                placeholder: "Selecione os planos",
+                templateResult: function(option) {
+                    if (!option.id) {
+                        return option.text;
+                    }
+                    var $option = $(
+                        '<span><input type="checkbox" checked /> ' + option.text + '</span>'
+                    );
+                    return $option;
+                },
+                templateSelection: function(option) {
+                    return option.text;
+                }
+            });
+
+            // Seleciona todos os planos por padrão
+            $('#planos_escolhidos').val(['7', '8', '9', '13', '14', '15']).trigger('change');
+        });
+    </script>
 
 <script>
     var loadfile = function(event){
