@@ -56,7 +56,7 @@
             content: "\f00c"; /* ícone de check */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
-            color: rgb(128, 0, 0);
+            color: rgb(245,87,90);
         }
     </style>
 </head>
