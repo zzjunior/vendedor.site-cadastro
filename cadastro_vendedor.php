@@ -24,6 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">-->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         .custom-checkbox {
             display: inline-block;
             margin-right: 10px; /* Espaço entre os checkboxes */
@@ -82,6 +83,9 @@
                     <div class="col-lg text-center">
                         <h1 class="mt-5 text-white">Venda mais e melhor com o Panfleto Digital Honda!</h1>
                         <p class="interactive-text text-white h6">Conquiste e impressione seus clientes, centralizando todas as informações dos planos e valores das parcelas,  além de vídeos  essenciais para fechar vendas de consórcio e financiamento como nunca antes.</p>
+                        <button id="button-envio-3" type="button" class="container border border-warning img-fluid" style="border-radius: 0.8rem; background-color:#F8BB16">
+                        <p class="text-center m-0 mt-2 h4" style="color: rgb(220,20,60); font-family: 'Poppins', sans-serif;"><strong>APENAS</strong><h2 style="color: rgb(220,20,60); font-family: 'Poppins', sans-serif; font-weight: 1000;">R$14,90/mês!</h2></p>
+                        </button>
                     </div>
                     <div class="col-lg text-center">
                         <img class="img-fluid mb-3" src="https://alcancevendas.com.br/panfletodigital/wp-content/uploads/2023/11/mockup2.png" width="250px" alt="Panfleto Digital Honda">
@@ -108,6 +112,8 @@
                 document.getElementById('envio_cadastro').scrollIntoView({behavior: 'smooth'});});
                 document.getElementById('button-envio-2').addEventListener('click', function() {
                     document.getElementById('envio_cadastro').scrollIntoView({behavior: 'smooth'});});
+                    document.getElementById('button-envio-3').addEventListener('click', function() {
+                        document.getElementById('envio_cadastro').scrollIntoView({behavior: 'smooth'});});
                 </script>
         </div>
     </header>
@@ -251,15 +257,18 @@
                                     </select>
                                 </div>
                             </div>-->
-
                             <div class="form-group row">
                                 <div class="col-xl-12 col-sm-6 mb-3 mb-sm-0">
                                     <label for="planos_escolhidos">PLANOS QUE EU VENDO</label><br>
+                                    <div class="custom-checkbox h6 border rounded p-1 shadow-sm">
+                                        <input type="checkbox" id="all" name="planos[]" value="all" checked>
+                                        <label for="all" class="m-1 mb-1">Todos</label>
+                                    </div>
                                     <div class="custom-checkbox h6">
                                         <input type="checkbox" id="plano_7" name="planos[]" value="7" checked>
                                         <label for="plano_7">Advance</label>
                                     </div>
-                                    <div  class="custom-checkbox h6">
+                                    <div class="custom-checkbox h6">
                                         <input type="checkbox" id="plano_8" name="planos[]" value="8" checked>
                                         <label for="plano_8">#Vou de Honda</label>
                                     </div>
@@ -281,7 +290,6 @@
                                     </div>
                                 </div>
                             </div>
-
 
                             <div class="form-group row mb-5">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -315,8 +323,15 @@
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="js/virtual-select.min.js"></script>
-
-
+                <!--selação all planos-->
+<script>
+                        document.getElementById('all').addEventListener('change', function() {
+                            let checkboxes = document.querySelectorAll('input[name="planos[]"]');
+                            checkboxes.forEach(function(checkbox) {
+                            checkbox.checked = document.getElementById('all').checked;
+                            });    
+                        });
+                    </script>
 <script>
     $(document).ready(function() {
     $('.select2-multiple').select2();
