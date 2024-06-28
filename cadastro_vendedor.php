@@ -63,7 +63,7 @@
 </head>
 
 <body id="page-top">
-    <header class="shadow-lg" style="background-color:#0F172D">
+<header class="shadow-lg" style="background-color:#0F172D">
         <!-- Topbar -->
         <nav class="navbar navbar-expand topbar mb-5 static-top">
             <div class="container navbar-light bg-white shadow-lg p-2 mt-3" style="border-radius: .2rem;">
@@ -171,12 +171,11 @@
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="slug">URL do Site:</label>
-                                    <div class="mb-3 mb-sm-0 input-group">
+                                    <div class="mb-sm-0 input-group">
                                     <span class="input-group-text rounded-0 mb-sm-5 mb-3" id="basic-addon1">vendedor.site/</span>
-                                    <input type="text" name="slug" class="form-control form-control-user" id="slug"
-                                        placeholder="Ex:..nicolyhonda" value="" required>
-                                        <p class="nome_invalido text-danger d-none">URL em uso</p>
-                                        </div>
+                                    <input type="text" name="slug" class="form-control form-control-user" id="slug" placeholder="Ex:..nicolyhonda" value="" required>
+                                    <p class="nome_invalido text-danger d-none">URL em uso</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -229,19 +228,20 @@
                             </div>
                             
                             <div class="form-group row">
-                            <div class="col-3 col-sm-1 mb-3">
-                                <label for="celular">DDD</label>
-                                <input required type="text" name="ddd" class="form-control form-control-user phone_ddd" id="celular" placeholder="00" maxlength="2" style="font-family: Roboto, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Noto Color Emoji&quot;, EmojiNotoColor, &quot;Noto Emoji&quot;, EmojiNoto, &quot;Segoe UI&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Twitter Color Emoji&quot;, EmojiTwemColor, &quot;Twemoji Mozilla&quot;, EmojiTwem, &quot;EmojiOne Mozilla&quot;, &quot;Android Emoji&quot;, EmojiSymbols, Symbola, EmojiSymb !important;" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);">
-                            </div>
-                            <div class="col-9 col-sm-5 mb-3">
-                                <label for="celular">Celular</label>
-                                <input required type="text" name="celular" class="form-control form-control-user phone" id="celular" placeholder="00000-0000" maxlength="10">
-                            </div>
-                                <div class="col-sm-6">
-                                    <label for="instagram">Seu instagram:</label>
-                                    <input type="text" name="instagram" value="" class="form-control form-control-user" id="exampleLastName"
-                                        placeholder="Ex:..@joaocarlosvendas">
+                                <div class="col-3 col-sm-1 mb-3">
+                                    <label for="celular">DDD</label>
+                                    <input required type="text" name="ddd" class="form-control form-control-user phone_ddd" placeholder="00" maxlength="2" style="font-family: Roboto, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Noto Color Emoji&quot;, EmojiNotoColor, &quot;Noto Emoji&quot;, EmojiNoto, &quot;Segoe UI&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Twitter Color Emoji&quot;, EmojiTwemColor, &quot;Twemoji Mozilla&quot;, EmojiTwem, &quot;EmojiOne Mozilla&quot;, &quot;Android Emoji&quot;, EmojiSymbols, Symbola, EmojiSymb !important;" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);">
                                 </div>
+                                <div class="col-9 col-sm-5 mb-3">
+                                    <label for="celular">Celular</label>
+                                    <input required type="text" name="celular" class="form-control form-control-user phone" id="celular" placeholder="00000-0000" maxlength="10">
+                                    <p class="celular_invalido text-danger d-none">Numero em uso</p>
+                                </div>
+                                    <div class="col-sm-6">
+                                        <label for="instagram">Seu instagram:</label>
+                                        <input type="text" name="instagram" value="" class="form-control form-control-user" id="exampleLastName"
+                                            placeholder="Ex:..@joaocarlosvendas">
+                                    </div>
                             </div>
 
                             <!--<div class="form-group row">
@@ -257,12 +257,13 @@
                                     </select>
                                 </div>
                             </div>-->
+
                             <div class="form-group row">
                                 <div class="col-xl-12 col-sm-6 mb-3 mb-sm-0">
                                     <label for="planos_escolhidos">PLANOS QUE EU VENDO</label><br>
                                     <div class="custom-checkbox h6 border rounded p-1 shadow-sm">
                                         <input type="checkbox" id="all" name="planos[]" value="all" checked>
-                                        <label for="all" class="m-1 mb-1">Todos</label>
+                                        <label for="all" class="m-1 mb-1">Todos os planos</label>
                                     </div>
                                     <div class="custom-checkbox h6">
                                         <input type="checkbox" id="plano_7" name="planos[]" value="7" checked>
@@ -291,6 +292,7 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group row mb-5">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="apresentacao">Exibir valor da carta de crédito</label>
@@ -300,7 +302,7 @@
                                     </select>
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label for="apresentacao">QUEM VAI PAGAR SEU SITE?</label>
+                                    <label for="apresentacao">QUEM VAI PAGAR SEU SITE?</label>
                                     <select name="fonte_pagamento" id="fonte_pagamento" class="form-control">
                                         <option value="1" >Vendedor</option>
                                         <option value="2" >Minha Concessionaria</option>
@@ -323,15 +325,8 @@
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="js/virtual-select.min.js"></script>
-                <!--selação all planos-->
-<script>
-                        document.getElementById('all').addEventListener('change', function() {
-                            let checkboxes = document.querySelectorAll('input[name="planos[]"]');
-                            checkboxes.forEach(function(checkbox) {
-                            checkbox.checked = document.getElementById('all').checked;
-                            });    
-                        });
-                    </script>
+
+
 <script>
     $(document).ready(function() {
     $('.select2-multiple').select2();
@@ -360,7 +355,16 @@
             $('#planos_escolhidos').val(['7', '8', '9', '13', '14', '15']).trigger('change');
         });
     </script>
-
+    <!--selação all planos-->
+<script>
+                        document.getElementById('all').addEventListener('change', function() {
+                            let checkboxes = document.querySelectorAll('input[name="planos[]"]');
+                            checkboxes.forEach(function(checkbox) {
+                            checkbox.checked = document.getElementById('all').checked;
+                            });    
+                        });
+                    </script>
+<!--fotoPreview-->
 <script>
     var loadfile = function(event){
         var output = document.getElementById('output');
@@ -435,6 +439,7 @@
     <script>
     $(document).ready(function() {
         $("#slug").keyup(function(){
+            console.log("slug");
             var input = $(this).val();
             if(input != ""){
                 $.ajax({
@@ -457,10 +462,40 @@
     });
 
     $(document).ready(function() {
+        $("#celular, .phone_ddd").keyup(function(){
+            console.log("celular");
+            var ddd = $(".phone_ddd").val();
+            var celular = $("#celular").val();
+            var fullNumber = ddd + celular;
+            if(fullNumber != null){
+                $.ajax({
+                    url: '/check-celular-unique',
+                    type: 'POST',
+                    data: { celular: fullNumber },
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        if(response === "existe") {
+                            $('.celular_invalido').removeClass('d-none');
+                        } else {
+                            $('.celular_invalido').addClass('d-none');
+                            console.log(fullNumber);
+                        }
+                    },
+                });
+            }
+        });
+    });
+    $(document).ready(function() {
         $('.Vendedor').on('submit', function(e) {
             if (!$('.nome_invalido').hasClass('d-none')) {
                 e.preventDefault(); // Prevent form submission
                 alert('URL em uso. Por favor, escolha outro.');
+            }
+            else if(!$('.celular_invalido').hasClass('d-none')){
+                e.preventDefault(); // Prevent form submission
+                alert('Celular em uso. Caso ja tenha criado um panfleto entre em contato com nosso suporte.');
             }
         });
     });
