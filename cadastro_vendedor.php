@@ -163,6 +163,7 @@
                                         value="" required>
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="name">Nome no site:</label>
@@ -178,6 +179,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label for="loja">Sua Concessionaria:</label>
@@ -230,7 +232,7 @@
                             <div class="form-group row">
                                 <div class="col-3 col-sm-1 mb-3">
                                     <label for="celular">DDD</label>
-                                    <input required type="text" name="ddd" class="form-control form-control-user phone_ddd" placeholder="00" maxlength="2" style="font-family: Roboto, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Noto Color Emoji&quot;, EmojiNotoColor, &quot;Noto Emoji&quot;, EmojiNoto, &quot;Segoe UI&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Twitter Color Emoji&quot;, EmojiTwemColor, &quot;Twemoji Mozilla&quot;, EmojiTwem, &quot;EmojiOne Mozilla&quot;, &quot;Android Emoji&quot;, EmojiSymbols, Symbola, EmojiSymb !important;" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);">
+                                    <input required type="text" name="ddd" class="form-control form-control-user phone_ddd" placeholder="00" maxlength="2" style="font-family: Roboto, sans-serif, Apple Color Emoji, Noto Color Emoji, EmojiNotoColor, Noto Emoji, EmojiNoto,Segoe UI,Segoe UI Emoji,Segoe UI Symbol, Twitter Color Emoji, EmojiTwemColor,Twemoji Mozilla, EmojiTwem,EmojiOne Mozilla, Android Emoji, EmojiSymbols, Symbola, EmojiSymb !important;" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);">
                                 </div>
                                 <div class="col-9 col-sm-5 mb-3">
                                     <label for="celular">Celular</label>
@@ -243,20 +245,6 @@
                                             placeholder="Ex:..@joaocarlosvendas">
                                     </div>
                             </div>
-
-                            <!--<div class="form-group row">
-                                <div class="col-xl-12 col-sm-3 mb-3 mb-sm-0">
-                                    <label for="planos_escolhidos">PLANOS QUE EU VENDO</label>
-                                    <select id="planos_escolhidos" placeholder="Selecione os planos" name="planos[]" multiple="multiple" class="select2-multiple">
-                                        <option value="7" selected>Advance</option>
-                                        <option value="8" selected>#Vou de Honda</option>
-                                        <option value="9" selected>#Vou de Honda+</option>
-                                        <option value="13" selected>Plano Pop 110i ES</option>
-                                        <option value="14" selected>Plano Pop 110i + 10</option>
-                                        <option value="15" selected>Plano CRF</option>
-                                    </select>
-                                </div>
-                            </div>-->
 
                             <div class="form-group row">
                                 <div class="col-xl-12 col-sm-6 mb-3 mb-sm-0">
@@ -397,8 +385,8 @@
         </div>
         <!-- End of Content Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
+    <!--</div>
+     End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
