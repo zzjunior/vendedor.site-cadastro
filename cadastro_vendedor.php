@@ -57,6 +57,7 @@
             content: "\f00c"; /* ícone de check */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
+            font-size: 1.5rem;
             color: rgb(245,87,90);
         }
     </style>
@@ -158,9 +159,9 @@
                                         value="" required>
                                 </div>
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <label for="name">Seu CPF:</label>
-                                    <input type="text" name="CPF" class="form-control form-control-user" id="exampleFirstName"
-                                        value="" required>
+                                    <label for="cpf">Seu CPF:</label>
+                                    <input type="text" name="CPF" class="form-control form-control-user" id="cpf" value="" required placeholder="000.000.000-00">
+                                    <p id="cpf-error" class="text-danger d-none">CPF inválido.</p>
                                 </div>
                             </div>
 
@@ -359,6 +360,93 @@
         output.src = URL.createObjectURL(event.target.files[0]);
     };
 </script>
+<!--validação de celular-->
+                                <script>
+                                // verificação do número, pois muitos vendedores estão colocando números errados
+                                function formatCelular(value) {
+                                    // Remove tudo que não é número
+                                    value = value.replace(/\D/g, '');
+                                    // Adiciona o hífen após os 5 primeiros dígitos
+                                    if (value.length > 5) {
+                                        return value.slice(0, 5) + '-' + value.slice(5, 9);
+                                    } else {
+                                        return value;}}
+                                        document.getElementById('celular').addEventListener('input', function (e) {
+                                    // valor prenchido
+                                    var value = e.target.value;
+                                    // Formata o valor
+                                    var formattedValue = formatCelular(value);
+                                     // Corrige
+                                     e.target.value = formattedValue;
+                                     var regex = /^\d{5}-\d{4}$/;
+                                     if (regex.test(formattedValue)) {
+                                        e.target.setCustomValidity('');
+                                    } else {
+                                        e.target.setCustomValidity('Número de celular inválido. Use o formato 00000-0000.');}});
+                                        // Mesma coisa pro DDD
+                                        document.querySelector('.phone_ddd').addEventListener('input', function (e) {
+                                            var value = e.target.value;
+                                            var regex = /^\d{2}$/;
+                                            if (regex.test(value)) {
+                                                e.target.setCustomValidity('');
+                                            } else {
+                                                e.target.setCustomValidity('DDD inválido. Use exatamente dois dígitos.');
+                                            }});
+                                            </script>
+                                            <!--fim-validação-->
+                                            <!--validação de cpf-->
+                                            <script>
+    // Função para formatar o CPF com pontos e hífen
+    function formatCPF(cpf) {
+        cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+        if (cpf.length > 9) {
+            return cpf.slice(0, 3) + '.' + cpf.slice(3, 6) + '.' + cpf.slice(6, 9) + '-' + cpf.slice(9, 11);
+        } else if (cpf.length > 6) {
+            return cpf.slice(0, 3) + '.' + cpf.slice(3, 6) + '.' + cpf.slice(6);
+        } else if (cpf.length > 3) {
+            return cpf.slice(0, 3) + '.' + cpf.slice(3);
+        } else {
+            return cpf;
+        }
+    }
+
+    // Função para validar o CPF
+    function validateCPF(cpf) {
+        cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+        if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) {
+            return false; // CPF com todos os dígitos iguais é inválido
+        }
+        // Calcula e valida os dígitos verificadores
+        const calculateDigit = (cpf, factor) => {
+            let sum = 0;
+            for (let i = 0; i < factor; i++) {
+                sum += cpf[i] * (factor + 1 - i);
+            }
+            const remainder = (sum * 10) % 11;
+            return remainder === 10 ? 0 : remainder;
+        };
+        const digit1 = calculateDigit(cpf, 9);
+        const digit2 = calculateDigit(cpf, 10);
+        return cpf[9] == digit1 && cpf[10] == digit2;
+    }
+
+    document.getElementById('cpf').addEventListener('input', function (e) {
+        const value = e.target.value;
+        const formattedValue = formatCPF(value);
+        e.target.value = formattedValue;
+
+        const isValid = validateCPF(formattedValue);
+        const errorElement = document.getElementById('cpf-error');
+        if (isValid || formattedValue.length === 0) {
+            errorElement.classList.add('d-none');
+            e.target.setCustomValidity('');
+        } else {
+            errorElement.classList.remove('d-none');
+            e.target.setCustomValidity('CPF inválido. Use o formato 000.000.000-00');
+        }
+    });
+</script>
+<!--fim-validação-cpf-->
             </div>
             <!-- End of Main Content -->
 
