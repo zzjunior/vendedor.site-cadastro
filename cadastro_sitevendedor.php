@@ -128,7 +128,7 @@
     <div class="card o-hidden border-0 shadow-lg my-5">
         <div class="card-body p-0">
         <div class="text-center">
-                        <h2 id="envio_cadastro" class="mt-5">Envie seu cadastro<p class="h6 text-danger">Site do Vendedor Honda</p></h2>
+                        <h2 id="envio_cadastro" class="mt-5">Envie seu cadastro<p class="h6 text-danger">Site do Vendedor</p></h2>
                         </div>
                         <div class="col">
                     <div class="text-center" style="margin-top: 2rem;">
