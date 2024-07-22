@@ -95,8 +95,7 @@
             </div>
         </section>
         <section class="container-xl w-100 mb-5" style="margin-top: 2rem; display: inline-block;position: relative;left: 50%;transform: translateX(-50%);">
-                <iframe class="panfleto-video w-100 shadow-lg" style="border-radius: .5rem;" frameborder="" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="VIDEO DE APRESENTAÇÃO - SITE DO VENDEDOR" width="620" height="340" src="https://www.youtube.com/embed/Vf9ouw7Hk6E?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Falcancevendas.com.br&amp;widgetid=1" id="widget2">
-                </iframe>
+                <iframe class="panfleto-video w-100 shadow-lg" style="border-radius: .5rem;" width="315" height="560" src="https://www.youtube.com/embed/VGM31egkZjE" title="Você já tem seu SITE DO VENDEDOR?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </section>
         <div class="container text-center">
         <button id="button-envio-2" class="mb-5 shadow img-fluid" type="button" style="background-color:rgb(245,87,90);border-radius:2rem; border: none; width:25rem; height:3rem;">
@@ -295,6 +294,11 @@
                                     <select name="fonte_pagamento" id="fonte_pagamento" class="form-control">
                                         <option value="1" >Vendedor</option>
                                         <option value="2" >Minha Concessionaria</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="apresentacao">Qual a melhor DATA para vencimento?</label>
+                                    <input required type="date" name="vencimento" class="form-control form-control-user date" id="melhorVencimento" >
                                     </select>
                                 </div>
                             </div>
